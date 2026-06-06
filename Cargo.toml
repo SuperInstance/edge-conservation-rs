@@ -1,0 +1,21 @@
+[package]
+name = "edge-conservation"
+version = "0.1.0"
+edition = "2021"
+description = "Conservation-law verification for edge deployment (no_std, small binary)"
+license = "MIT"
+repository = "https://github.com/SuperInstance/edge-conservation-rs"
+keywords = ["conservation", "verification", "edge", "no_std", "embedded"]
+categories = ["science", "embedded", "no-std"]
+
+[dependencies]
+
+[features]
+default = ["std"]
+std = []
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
